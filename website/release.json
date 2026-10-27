@@ -1,0 +1,16 @@
+{
+  "version": "1.1.0",
+  "tag": "v1.1.0",
+  "status": "pre-release",
+  "repository_url": "https://github.com/adam-kaluza/private-accounting-personal-finance",
+  "release_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/releases/tag/v1.1.0",
+  "zip_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/releases/download/v1.1.0/Private-Accounting-Personal-Finance-1.1.0-Windows-x64.zip",
+  "checksum_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/releases/download/v1.1.0/Private-Accounting-Personal-Finance-1.1.0-Windows-x64.zip.sha256",
+  "installer_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/releases/download/v1.1.0/install.ps1",
+  "verification_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/releases/download/v1.1.0/Verification-1.1.0.json",
+  "guide_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/blob/v1.1.0/docs/INSTALL.md",
+  "issues_url": "https://github.com/adam-kaluza/private-accounting-personal-finance/issues",
+  "install_command": "& { $ErrorActionPreference='Stop'; if ($ExecutionContext.SessionState.LanguageMode -ne 'FullLanguage') { throw 'Use the portable ZIP: this PowerShell session restricts installer execution.' }; if (@(Get-ExecutionPolicy -List | Where-Object { $_.ExecutionPolicy -in @('Restricted','AllSigned') }).Count) { throw 'Use the portable ZIP: an explicit PowerShell policy restricts this unsigned installer.' }; $pfScript=Join-Path ([IO.Path]::GetTempPath()) ('PrivateFinance-'+[guid]::NewGuid().ToString('N')+'.ps1'); if (Test-Path -LiteralPath $pfScript) { throw 'Temporary path already exists.' }; try { Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/adam-kaluza/private-accounting-personal-finance/releases/download/v1.1.0/install.ps1' -OutFile $pfScript -TimeoutSec 60; if (([IO.FileInfo]$pfScript).Length -gt 512KB) { throw 'Unexpected installer size.' }; $pfHasher=[Security.Cryptography.SHA256]::Create(); try { $pfDigest=[BitConverter]::ToString($pfHasher.ComputeHash([IO.File]::ReadAllBytes($pfScript))).Replace('-','').ToLowerInvariant() } finally { $pfHasher.Dispose() }; if ($pfDigest -ne '1a18148ee08793ea35218401a0ce0533185b7c8c96b6f0649d6a6c47e63d5b17') { throw 'Installer checksum mismatch. Nothing was installed.' }; & ([ScriptBlock]::Create([IO.File]::ReadAllText($pfScript))) -DesktopShortcut } finally { if (Test-Path -LiteralPath $pfScript) { Remove-Item -LiteralPath $pfScript } } }",
+  "zip_sha256": "a49ee4459d3366eb8e2472b1e252a6e131bb616787380f3a2a77cebbc130e76e",
+  "installer_sha256": "1a18148ee08793ea35218401a0ce0533185b7c8c96b6f0649d6a6c47e63d5b17"
+}

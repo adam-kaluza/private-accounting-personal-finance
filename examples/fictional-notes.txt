@@ -1,0 +1,8 @@
+FICTIONAL DEMONSTRATION ONLY
+
+Goal: review spending and plan a grocery budget for October 2026.
+These notes are reference text. They do not create transactions or debt balances.
+The companion CSV contains fictional checking and savings transactions, including
+an unclassified item that requires review. The two transfer entries describe the
+same movement between fictional accounts and are not income or spending.
+Enter a debt balance only when a separate source supplies its as-of date.

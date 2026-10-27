@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#172b35">
+  <title>Private Accounting · Personal finance</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#dashboard" aria-label="Private Accounting home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M8 23V9h7a5 5 0 0 1 0 10h-7M22 23V12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M20 8h4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+        <span><strong>Private Accounting</strong><small>Personal finance</small></span>
+      </a>
+      <div class="nav-label">YOUR WORKSPACE</div>
+      <nav id="navigation" aria-label="Pages"></nav>
+      <div class="sidebar-bottom">
+        <div class="local-status"><span class="status-dot"></span><span>Local workspace</span></div>
+        <p>Your records. Your review.<br>Your computer.</p>
+        <div class="sidebar-rule"></div>
+        <button class="sidebar-help" data-page="settings" type="button">Settings &amp; help <span aria-hidden="true">↗</span></button>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Personal workspace</span><span aria-hidden="true">/</span><strong id="page-label">Dashboard</strong></div>
+        <div class="topbar-end"><span class="connection-label" id="connection-status"><span class="status-dot"></span>On this computer</span><button class="icon-button refresh-button" id="refresh-button" type="button" aria-label="Refresh saved records" title="Refresh saved records">↻</button><span class="avatar" aria-hidden="true">PA</span></div>
+      </header>
+      <main id="main" tabindex="-1"><div class="initial-loading"><span class="spinner" aria-hidden="true"></span><p>Opening your local workspace…</p></div></main>
+      <footer class="workspace-footer"><span>Private Accounting <span class="footer-dot">·</span> Personal finance</span><span>Only approved information becomes a saved record.</span></footer>
+    </div>
+  </div>
+  <div class="toast-stack" id="toast-stack" role="status" aria-live="polite" aria-atomic="false"></div>
+  <dialog id="app-dialog" aria-labelledby="dialog-title"></dialog>
+  <noscript><div class="noscript">This local workspace requires JavaScript. Enable it for this localhost page, then reload.</div></noscript>
+</body>
+</html>

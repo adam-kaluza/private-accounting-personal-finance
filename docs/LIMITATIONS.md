@@ -1,0 +1,15 @@
+# Supported features and limits
+
+- Manual transaction entry/edit/delete through approval; exact USD cents; income, expenses, transfers, loans, refunds and unclassified movements.
+- Goals, reporting dates, dated category budgets and manually reported debts. No multi-currency conversion, live bank feed, investment engine, automatic reconciliation, forecast, payment or tax filing.
+- UTF-8 TXT, CSV and TSV. Canonical transaction imports require headers `date,description,amount,account,classification,category`. Noncanonical files can supply text for local review/AI; automatic bank-format mapping is not implemented.
+- XLSX read-only preview with sheet/cell references. Formula values are not calculated, macro code is never run, and external links are not fetched. No legacy XLS, XLSM, arbitrary workbook editing or formula recalculation.
+- Text PDF extraction using bundled pypdf. Scanned images, encrypted PDFs and unsupported content require local OCR/manual notes. Page/text limits are shown in the preview; extraction order and accuracy require review.
+- ZIP previews with individual member selection, traversal/links/encryption/nested archives rejected. No bulk automatic approval.
+- Inputs: 10 MB per file, bounded archive expansion and parser limits, 5,000 tabular rows per preview. The last 20 file previews remain available per session; an older file may need to be selected again. Finance storage permits up to 50,000 approved transactions within a 32 MiB snapshot limit; long descriptions may reach the size limit sooner. Immutable full revisions consume extra disk space.
+- AI: optional, separate local Ollama child; maximum five selected documents and 24,000 input characters per request. No autonomous tool execution, financial decision authority, web access or background ingestion. Questionable suggestions may be rejected or entered manually.
+- Exports: versioned XLSX/CSV/JSON, printable HTML and records/documents backup. PDF output uses browser Print → Save as PDF; no standalone PDF printer is bundled. XLSX files are snapshots with numeric amounts and literal text; totals exceeding spreadsheet numeric precision are stored as exact text. There are no generated formulas requiring recalculation. Built-in backups are limited to 128 MiB of source data and 20,000 files; preserve larger data folders by copying them locally while this edition is closed.
+- No encrypted database, login/multi-user access, automatic cloud backup or authenticated sharing server. Intended for one local user and one active process per data folder.
+- Windows x64 build; no code-signing certificate or SmartScreen reputation supplied. Tests do not amount to a security audit, financial certification or validation on every Windows/hardware combination.
+
+This public edition retains the original finance workflow's careful validation, explicit approval, dated plans and separate cash-flow classes. It has an independent storage format and frontend. Historical private launch/control helpers, other editions' shared ledger integration and direct workbook mutation are deliberately absent.

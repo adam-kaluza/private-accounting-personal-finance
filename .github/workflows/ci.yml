@@ -1,0 +1,25 @@
+name: Fictional Windows tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Prepare pinned public dependencies
+        shell: pwsh
+        run: python tools/bootstrap_runtime.py --download
+      - name: Run fictional application, packaging and installer tests
+        shell: pwsh
+        run: ./runtime/python.exe tools/run_tests.py
+      - name: Build and verify the portable release
+        shell: pwsh
+        run: ./runtime/python.exe tools/build_release.py

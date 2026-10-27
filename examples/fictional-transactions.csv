@@ -1,0 +1,9 @@
+date,description,amount,account,classification,category
+2026-10-01,Fictional monthly pay,3200.00,Fictional checking,income,Pay
+2026-10-02,Fictional rent,-1200.00,Fictional checking,expense,Housing
+2026-10-03,Fictional groceries,-84.25,Fictional checking,expense,Groceries
+2026-10-05,Fictional transfer to savings,-250.00,Fictional checking,transfer,Savings transfer
+2026-10-05,Fictional transfer from checking,250.00,Fictional savings,transfer,Savings transfer
+2026-10-07,Fictional purchase refund,18.50,Fictional checking,refund,Groceries
+2026-10-09,Fictional loan proceeds,500.00,Fictional checking,loan,Loan proceeds
+2026-10-10,Fictional item needing review,-12.00,Fictional checking,,Unresolved
